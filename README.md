@@ -5,6 +5,19 @@ GraphQL requests and send back appropriate responses.
 
 ## Installation
 
+### Use local package
+The module has not been published yet. To install it you can check out this repository and pack it using
+```sh
+npm pack
+```
+This will create a tgz file you can copy into the project the GraphQLServer should be used in. You can install it as a
+dependency by referencing the file, e.g.
+```sh
+npm i dreamit-graphql-server-0.17.1.tgz
+```
+
+### In future: Use published package
+After the module has been published to npm default registry you can install it using a package manager like npm
 ```sh
 npm install --save @dreamit/graphql-server
 ```
@@ -167,7 +180,7 @@ Own MetricsClient can be used by implementing `MetricsClient` interface.
 
 readonly shouldUpdateSchemaFunction?: (schema?: GraphQLSchema) => boolean
 
-readonly collectErrorMetricsFunction?: (error: GraphQLError, request?: Request) => void
+readonly collectErrorMetricsFunction?: (errorName: string, error: GraphQLError, request?: Request) => void
 
 readonly rootValue?: unknown | undefined
 
